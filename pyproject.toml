@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synth"
+version = "0.1"
+
+[project.entry-points."pygments.lexers"]
+sent = "sentence.lexer:SentenceLexer"
+pos = "sentence.pos:POSLexer"
+
+[project.entry-points."pygments.styles"]
+sstyle ="sentence.style:SentenceStyle"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

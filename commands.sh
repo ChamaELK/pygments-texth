@@ -1,0 +1,1 @@
+ pygmentize -O full,style=sstyle  -l sent -o output.html test/input.sentence 
