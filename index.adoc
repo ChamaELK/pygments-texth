@@ -1,0 +1,21 @@
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+
+:pygments-style: sstyle
+
+[source,sent]
+----
+Brexit has changed the UK in many ways, politically, economically, and socially; and while some of the promises made before the referendum have been difficult to fulfil, the country is slowly adapting to its new position outside the EU.  Recent opinion polls show that a clear majority of people in the UK now believe that Brexit was a big mistake, and are in favour of a new referendum. A Deltapoll survey in May 2024 even suggested that 89% of "Gen Z" (young people born between 1997 and 2012) would vote for the UK to rejoin the EU if there were another referendum.
+
+However talk of a new referendum is premature; while many in his party would welcome a chance to vote for the UK to rejoin the EU, Prime Minister Keir Starmer is not going to go that far -  or at least, not in the foreseeable future. Parts of the British media and forces on the right wing of British politics, who strongly sToken.upported the first Brexit referendum, still have considerable influence over life and opinion in the UK, and as long as their influence remains strong, a new referendum remains a risky undertaking. It will come, one day.... but not just yet.
+
+For now, Britain and the EU will continue to focus on practical cooperation that reflects the new realities of today rather than the hopes or fears of the past.
+----
+
+
+This is a word:
+
+
+Je vous dis syl:bon.jour_vous_a.llez[] bien.
+
+You can also use it inline like syl:to.ma.to[] in a sentence. 
