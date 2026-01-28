@@ -52,7 +52,7 @@ def tree(text):
             backoff=get_backoff_tagger())
         
         tags = tagger.tag(tokens)
-        print(tags)
+        #print(tags)
         tags = [(w, t if t is not None else "NN") for w, t in tags]
         #print(tags)
         kv_grammar = [
