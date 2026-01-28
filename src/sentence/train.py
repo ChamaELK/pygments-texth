@@ -12,7 +12,8 @@ joblib.dump(tagger, "./model/en_sent_tagger.pkl")
 
 # Spanish 
 nltk.download('cess_esp')
-spanish_sents = nltk.corpus.cess_esp.tagged_sents()
-es_tagger = nltk.tag.BigramTagger(spanish_sents, backoff=nltk.tag.DefaultTagger('NC'))  # NC = common noun default
-joblib.dump(es_tagger, "./model/es_sent_tagger.pkl")
+cess_sents = nltk.corpus.cess_esp.tagged_sents()
+uni_tag = nltk.tag.UnigramTagger(cess_sents, backoff = nltk.tag.DefaultTagger("NC"))
+bi_tag = nltk.tag.BigramTagger(cess_sents, backoff=uni_tag)
+joblib.dump(bi_tag, "./model/es_sent_tagger.pkl")
 

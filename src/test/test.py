@@ -5,7 +5,7 @@ from sentence.lexer import SentenceLexer
 from sentence.style import SentenceStyle
  
 # read input file
-with open("./../test/input.sentence", "r", encoding="utf-8") as f:
+with open("./../test/inputs/en.sentence", "r", encoding="utf-8") as f:
     code = f.read()
 
 lexer = SentenceLexer()

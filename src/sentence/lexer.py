@@ -9,8 +9,8 @@ import logging
 import joblib 
 
 logging.getLogger("nltk").setLevel(logging.ERROR)
-import warnings
-warnings.filterwarnings("ignore", message=".*parsing empty text.*")
+#import warnings
+#warnings.filterwarnings("ignore", message=".*parsing empty text.*")
 
 # nlp_tagger.py
 import pickle
@@ -18,7 +18,7 @@ from pathlib import Path
 
 _BACKOFF_TAGGER = None  # cache the loaded tagger
 
-def get_backoff_tagger(lang="en"):
+def get_backoff_tagger(lang="es"):
     
     global _BACKOFF_TAGGER
     """
@@ -33,12 +33,14 @@ def get_backoff_tagger(lang="en"):
     if _BACKOFF_TAGGER is None:
         tagger_path = Path(__file__).parent / "model" / paths[lang]
         #with open(tagger_path, "rb") as f:
+        #print(tagger_path)
         _BACKOFF_TAGGER = joblib.load(tagger_path)
     
     return _BACKOFF_TAGGER
 
 
-def tree(text):
+def tree(text,lang):
+    
     if not text.strip():
         return None
     else:
@@ -49,17 +51,37 @@ def tree(text):
             (r'\d+(?:\.\d+)?','NUMBER'),
             (r'^(?:[A-Z]\.)+[A-Z]\.?|[A-Z]{2,}$', 'ABR'),
             (r'^\$$', 'CURR')],
-            backoff=get_backoff_tagger())
+            backoff=get_backoff_tagger(lang))
         
         tags = tagger.tag(tokens)
         #print(tags)
         tags = [(w, t if t is not None else "NN") for w, t in tags]
-        #print(tags)
-        kv_grammar = [
+        
+        if lang == "es":
+            new_tags = []
+
+            for w, t in tags:
+                m = re.match(r'^([A-Za-z]{2})', t)
+                if m:
+                    new_t = m.group(1).upper()
+                    new_t = t[:2].upper()
+                    new_tags.append((w, new_t))
+                else:
+                    new_tags.append((w,t))
+                    
+            tags = new_tags
+
+            kv_grammar = [
+                ("PERCENT", "<NUMBER><PCT>"),
+                ("CURRENCY", "<NUMBER><CURR>"),
+                ("NP", "<D.*>?<AQ>*<NC>+")
+            ]
+        if lang == "en":
+            kv_grammar = [
             ("PERCENT", "<NUMBER><PCT>"),
             ("CURRENCY", "<NUMBER><CURR>"),
             ("NP", "<AT>?<JJ>*<NN>+")
-        ]
+            ]
 
         grammar = "\n".join([f"{label}: {{ {pattern} }}" for label, pattern in kv_grammar])
         
@@ -71,7 +93,7 @@ class SentenceLexer(Lexer):
     name = "Sentence"
     aliases = ["sent"]
     filenames = ["*.sentence"]
-    def __init__(self, lang="en", **kwargs):
+    def __init__(self, lang="es", **kwargs):
         super().__init__(**kwargs)
         self.lang = lang
         
@@ -96,7 +118,7 @@ class SentenceLexer(Lexer):
             token = circular_tokens[i]
             np_index = 0
             if sentence: 
-                nlptree = tree(sentence )
+                nlptree = tree(sentence , self.lang)
                 cursor = match.start()
                 subcursor = cursor 
 
