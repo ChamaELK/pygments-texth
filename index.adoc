@@ -1,9 +1,8 @@
 :source-highlighter: pygments
 :pygments-linenums-mode: inline
-
 :pygments-style: sstyle
 
-[source,sent]
+[source,sent, lang="en"]
 ----
 Brexit has changed the UK in many ways, politically, economically, and socially; and while some of the promises made before the referendum have been difficult to fulfil, the country is slowly adapting to its new position outside the EU.  Recent opinion polls show that a clear majority of people in the UK now believe that Brexit was a big mistake, and are in favour of a new referendum. A Deltapoll survey in May 2024 even suggested that 89% of "Gen Z" (young people born between 1997 and 2012) would vote for the UK to rejoin the EU if there were another referendum.
 
@@ -13,6 +12,32 @@ For now, Britain and the EU will continue to focus on practical cooperation that
 ----
 
 
+[source,sent, lang="es"]
+----
+Miguel Vilar se quedaba fascinado viendo a su abuela en la cocina. Mientras los otros niños del barrio jugaban en la calle, él prefería estar junto al fogón en aquella cocina valenciana donde siempre olía a sofrito.
+
+—Abuela, cuando sea mayor voy a tener un restaurante famoso —le decía mientras probaba las salsas a escondidas.
+
+A los 22 años, Miguel hizo la maleta y se fue a París para estudiar cocina. Pasó tres años aprendiendo y después cuatro más trabajando duro en buenos restaurantes franceses.
+
+Allí conoció técnicas nuevas y formas modernas de preparar los platos.
+
+Por las noches, en su pequeño apartamento parisino, contaba el dinero que había ganado.
+
+—Poco a poco estoy más cerca de mi sueño —murmuraba, mientras guardaba sus ahorros cuidadosamente.
+
+Con el dinero que juntó, Miguel regresó a Valencia y alquiló un local cerca del Mercado Central. Lo decoró con mucha ilusión y lo llamó "Fusión".
+
+Su carta era diferente: platos modernos que había aprendido en Francia. No ofrecía arroces tradicionales ni otros platos valencianos.
+
+Todo eran pequeñas creaciones con presentaciones muy bonitas y nombres elegantes. Los precios, naturalmente, eran altos.
+
+Al principio no le fue mal. Algunos críticos escribieron cosas positivas sobre su restaurante. "Una cocina diferente en Valencia", decían.
+
+Pero pronto apareció un problema: los clientes locales venían una vez por curiosidad, pero no volvían.
+
+
+----
 This is a word:
 
 

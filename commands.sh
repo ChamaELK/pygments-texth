@@ -1,1 +1,1 @@
- pygmentize -O full,style=sstyle  -l sent -o output.html test/input.sentence 
+ pygmentize -O full,style=sstyle  -l sent -P lang=en -o output.html test/es_input.sentence 

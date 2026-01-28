@@ -3,12 +3,12 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "synth"
+name = "pygments-texth"
 version = "0.1"
 
 [project.entry-points."pygments.lexers"]
 sent = "sentence.lexer:SentenceLexer"
-pos = "sentence.pos:POSLexer"
+
 
 [project.entry-points."pygments.styles"]
 sstyle ="sentence.style:SentenceStyle"
